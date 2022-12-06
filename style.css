@@ -1,0 +1,17 @@
+* {
+    font-family: sans-serif;
+    text-align: center;
+}
+.social {
+    position: absolute; 
+    right: 5px;
+    top: 5px;
+}
+.socialDiscord {
+    position: absolute;
+    right: 35px;
+    top: 5px;
+}
+.logo1 {
+    vertical-align: middle;
+}

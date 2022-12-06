@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Random Meme Generator">
+    <meta name="description" content="funny troll haha xd meme generator real">
+    <meta name="theme-color" content="ffffff">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tomfoolery.cf/">
+    <meta property="og:title" content="Random Meme Generator">
+    <meta property="og:description" content="funny troll haha xd meme generator real">
+    <meta property="og:image" content="https://www.tomfoolery.cf/thetroll.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.tomfoolery.cf/">
+    <meta property="twitter:title" content="Random Meme Generator">
+    <meta property="twitter:description" content="funny troll haha xd meme generator real">
+    <meta property="twitter:image" content="https://www.tomfoolery.cf/thetroll.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://www.recon.best/asset/assets/img/favicon.ico" type="image/x-icon">
+    <title>Meme Generator</title>
+</head>
+<body>
+    <a href="https://discord.gg/AP2hSQTDuVb"><img src="disc.png" width="24" height="24" alt="Discord Logo" class="socialDiscord"></a>
+    <a href="https://twitter.com/church_of_b"><img src="twt.png" width="24" height="24" alt="Twitter Logo" class="social"></a>
+	<h1 class="logo1"><img src="thetroll.png" width="65" height="45" alt="Trolface" class="logo1">Random Meme Generator</h1><hr />
+    <button onclick="generateMeme()">Generate</button>
+	<div id="meme-container"></div>
+    <script>
+        function generateMeme() {
+            const memeContainer = document.getElementById("meme-container");
+            
+            memeContainer.innerHTML = "";
+            
+            fetch("https://meme-api.com/gimme")
+                .then(response => response.json())
+                .then(data => {
+                    const memeImg = document.createElement("img");
+                    memeImg.src = data.url;
+                    memeContainer.appendChild(memeImg);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+    </script>
+</body>
+</html>
